@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://8q572v01yjwv"]
+
+[ext_resource type="Script" uid="uid://d2pg8x1pwb63t" path="res://scripts/pipes.gd" id="1_f17p0"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lsmmk"]
+
+[node name="pipes" type="Area2D" unique_id=713848616]
+script = ExtResource("1_f17p0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=481053399]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1314141904]
+position = Vector2(461, 70.00001)
+scale = Vector2(-90, -140.00002)
+texture = SubResource("PlaceholderTexture2D_lsmmk")
