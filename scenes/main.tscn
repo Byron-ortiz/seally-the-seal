@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d4mqndx1dc27l"]
+
+[ext_resource type="Script" uid="uid://c00tv6obn1du" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://8q572v01yjwv" path="res://scenes/pipes.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://xbs0bta5hrnc" path="res://scenes/character.tscn" id="3_sugp2"]
+
+[node name="main" type="Node" unique_id=1563284777]
+script = ExtResource("1_o5qli")
+mob_scene = ExtResource("2_0wfyh")
+
+[node name="PipeSpawnerCeil" type="Marker2D" parent="." unique_id=1242859085]
+position = Vector2(640, 0)
+
+[node name="PipeSpawnerFloor" type="Marker2D" parent="." unique_id=1136390841]
+position = Vector2(640, 360)
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1896855642]
+
+[node name="character" parent="." unique_id=1772998616 instance=ExtResource("3_sugp2")]
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

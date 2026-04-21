@@ -2,14 +2,25 @@
 
 [ext_resource type="Script" uid="uid://d2pg8x1pwb63t" path="res://scripts/pipes.gd" id="1_f17p0"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f17p0"]
+size = Vector2(69, 137.5)
+
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lsmmk"]
 
 [node name="pipes" type="Area2D" unique_id=713848616]
+position = Vector2(316, 128)
 script = ExtResource("1_f17p0")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=481053399]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_f17p0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1314141904]
-position = Vector2(461, 70.00001)
-scale = Vector2(-90, -140.00002)
+position = Vector2(4.5776367e-05, 1.0000191)
+scale = Vector2(-71.99998, -140)
 texture = SubResource("PlaceholderTexture2D_lsmmk")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=144000144]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
